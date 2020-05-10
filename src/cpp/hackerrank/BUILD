@@ -10,3 +10,9 @@ cc_binary(
     defines=["BAZEL_PLATFORM"],
     srcs=["data_types.cpp"]
 )
+
+cc_binary(
+    name="conditional_if_else",
+    defines=["BAZEL_PLATFORM"],
+    srcs=["conditional_if_else.cpp"]
+)
