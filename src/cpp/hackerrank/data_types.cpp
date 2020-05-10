@@ -9,14 +9,21 @@ int main() {
   float input_float;
   double input_double;
 
-  scanf(
-      "%d %ld %c %f %lf", 
-      &input_integer, 
-      &input_long, 
-      &input_character, 
-      &input_float, 
-      &input_double);
-
+  #ifdef BAZEL_PLATFORM
+    input_integer = 3;
+    input_long = 12345678912345;
+    input_character = 'a';
+    input_float = 334.23;
+    input_double = 14049.30493;
+  #else
+    scanf(
+        "%d %ld %c %f %lf", 
+        &input_integer, 
+        &input_long, 
+        &input_character, 
+        &input_float, 
+        &input_double);
+  #endif
 
   printf("%d\n", input_integer);
   printf("%ld\n", input_long);
